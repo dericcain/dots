@@ -9,12 +9,27 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
 Plugin 'w0rp/ale'
-Plugin 'mattn/emmet-vim'
 Plugin 'dracula/vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdtree'
 
+" Editing
+Plugin 'tpope/vim-commentary'
+Plugin 'mattn/emmet-vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-surround'
+Plugin 'yggdroot/indentline'
+Plugin 'valloric/matchtagalways'
+
+" IDE like stuff here
+Plugin 'ternjs/tern_for_vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'heavenshell/vim-jsdoc'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,14 +70,22 @@ set expandtab			" tabs are spaces
 
 " UI Stuff
 let g:seagrey_dark_LineNr='off'
-
+set colorcolumn=100 " Show right margin line
+highlight ColorColumn ctermbg=1 " Change the color of the right margin
 set showcmd   " show command in bottom bar
 set number      		" turns on line numbers
-set relativenumber    		" sets the surrouding line numbers relative to the current line number
 filetype indent on " load filetype-specific indent files
 set wildmenu " visual autocomplete for the command menu
 set lazyredraw " redraw only when need to
 set showmatch " highlight matching brackets and parens
+set sidescroll=1                      " smoother horizontal scrolling
+set sidescrolloff=5                   " keep at least 5 lines left/right
+hi htmlArg gui=italic
+hi Comment gui=italic
+hi Type    gui=italic
+hi htmlArg cterm=italic
+hi Comment cterm=italic
+hi Type    cterm=italic
 
 " Search stuff
 set incsearch " search as characters are entered
@@ -94,4 +117,8 @@ nnoremap E $
 " $/^ doesn't do anything
 nnoremap $ <nop>
 nnoremap ^ <nop>
- 
+
+
+" Some other custom stuff
+map <C-n> :NERDTreeToggle<CR>
+

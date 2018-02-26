@@ -75,6 +75,7 @@ plugins=(
   osx
   yarn
   colored-man-pages
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -239,4 +240,4 @@ function ghelp() {
 if [ -f /Users/dcain/.tnsrc ]; then 
     source /Users/dcain/.tnsrc 
 fi
-###-tns-completion-end-###
+
