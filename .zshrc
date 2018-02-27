@@ -240,5 +240,9 @@ if [ -f $HOME/.tnsrc ]; then
     source $HOME/.tnsrc 
 fi
 function syncdots() {
-  cd $HOME/.dots && git add . && git commit -m "$(date)" && git push
+  (cd $HOME/.dots && git add . && git commit -m "$(date)" && git push)
+}
+
+function dots() {
+  (cd $HOME/.dots && git pull)
 }
