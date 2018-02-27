@@ -2,13 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 unsetopt correct_all
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/dcain/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 export PROJECTS="$HOME/Code"
 export PATH=$PROJECTS/flutter/bin:$PATH
-export PATH=$HOME/sonar-scanner/bin:$PATH
 export Z="$HOME/.zshrc"
-export ANDROID_HOME=/Users/dcain/Library/Android/sdk
-export PATH=${PATH}:/Users/dcain/Library/Android/sdk/platform-tools:/Users/dcain/Library/Android/sdk/tools
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=${PATH}:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -98,7 +97,7 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -106,8 +105,8 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="code ~/.zshrc"
-alias ohmyzsh="code ~/.oh-my-zsh"
+alias zshconfig="code $HOME/.zshrc"
+alias ohmyzsh="code $HOME/.oh-my-zsh"
 alias c="cd $PROJECTS/${1}"
 alias e="$EDITOR ${1-.}"
 alias key="cat $HOME/.ssh/id_rsa.pub | pbcopy"
@@ -237,7 +236,7 @@ function ghelp() {
   echo 'gwip        	git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--"'
 }
 ###-tns-completion-start-###
-if [ -f /Users/dcain/.tnsrc ]; then 
-    source /Users/dcain/.tnsrc 
+if [ -f $HOME/.tnsrc ]; then 
+    source $HOME/.tnsrc 
 fi
 
