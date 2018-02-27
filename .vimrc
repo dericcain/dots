@@ -30,6 +30,8 @@ Plugin 'valloric/matchtagalways'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,6 +82,8 @@ set lazyredraw " redraw only when need to
 set showmatch " highlight matching brackets and parens
 set sidescroll=1                      " smoother horizontal scrolling
 set sidescrolloff=5                   " keep at least 5 lines left/right
+
+" Add some pretty italics
 hi htmlArg gui=italic
 hi Comment gui=italic
 hi Type    gui=italic
@@ -87,22 +91,34 @@ hi htmlArg cterm=italic
 hi Comment cterm=italic
 hi Type    cterm=italic
 
+" MatchTagAlways stuff
+let g:mta_use_matchparen_group=0
+let g:mta_set_default_matchtag_color=0
+highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
+
+" Add airiline buffer
+let g:airline#extensions#tabline#fnamemod = ':t' " show filename
+let g:airline_theme="molokai"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#whitespace#symbol = '!'
+
 " Search stuff
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
-
-" turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
 
 " Folding
 set foldenable " enable folding
 set foldlevelstart=10 " open most folds be default
 set foldnestmax=10 " 10 nested fold max
-
-" space open/closes folds
-nnoremap <space> za
-
 set foldmethod=indent " fold based on indent level
+
+" Mappings ==================================
+
+" Some other custom stuff
+map <C-n> :NERDTreeToggle<CR>
 
 " Movement
 
@@ -114,11 +130,12 @@ nnoremap k gk
 nnoremap B ^
 nnoremap E $
 
-" $/^ doesn't do anything
-nnoremap $ <nop>
-nnoremap ^ <nop>
+" space open/closes folds
+nnoremap <space> za
 
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
 
-" Some other custom stuff
-map <C-n> :NERDTreeToggle<CR>
+" toggle tagbar
+nmap <F8> :TagbarToggle<CR>
 

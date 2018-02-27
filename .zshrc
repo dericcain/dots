@@ -239,4 +239,6 @@ function ghelp() {
 if [ -f $HOME/.tnsrc ]; then 
     source $HOME/.tnsrc 
 fi
-
+function syncdots() {
+  cd $HOME/.dots && git add . && git commit -m "$(date)" && git push
+}
