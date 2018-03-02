@@ -1,9 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 unsetopt correct_all
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PROJECTS="$HOME/Code"
+export PATH="/usr/local/bin:$PATH"
 export PATH=$PROJECTS/flutter/bin:$PATH
 export Z="$HOME/.zshrc"
 export ANDROID_HOME=$HOME/Library/Android/sdk

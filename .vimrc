@@ -1,10 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Source our plugins file
+
 so ~/.vim/plugins.vim
-
-
 
 
 
