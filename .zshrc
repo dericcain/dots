@@ -239,10 +239,14 @@ function ghelp() {
 if [ -f $HOME/.tnsrc ]; then 
     source $HOME/.tnsrc 
 fi
-function syncdots() {
+function pushdots() {
   (cd $HOME/.dots && git add . && git commit -m "$(date)" && git push)
 }
 
-function dots() {
+function pulldots() {
   (cd $HOME/.dots && git pull)
+}
+
+function editvim() {
+   vim ~/.vimrc
 }
