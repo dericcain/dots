@@ -114,6 +114,9 @@ alias create=mkdir "$l && cd $_"
 alias cls="clear"
 alias sourcez="source $Z"
 
+# ctags stuff
+alias ctags="`brew --prefix`/bin/ctags"
+
 # Custom functions
 function ghelp() {
   echo 'g        	git'

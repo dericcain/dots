@@ -18,7 +18,8 @@ syntax enable 			" enable syntax highlighting
 
 " Plugins stuff ====================================================================
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git|release\|build\'
+let g:ctrlp_buftag_types = { 'javascript': '--language-force=javascript --javascript-types=fcmv' }
 
 " emmet plugin stuff
 let g:user_emmet_leader_key='<Tab>'
@@ -40,7 +41,14 @@ let g:closetag_close_shortcut = '<leader>>'
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\ }
+let g:ale_fixers = {
+\   'javascript': ['prettier-eslint'],
+\ }
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_javascript_eslint_use_global = 1
 
 set tabstop=2			" number of spaces per tab
 set softtabstop=2		" number of spaces in tab when editing
@@ -139,6 +147,10 @@ set splitright
 
 " Edit the vimrc file
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
+
+" Edit plugins.vim
+nmap <Leader>ep :tabedit ~/.vim/plugins.vim<cr>
+
 " Some other custom stuff
 map <C-n> :NERDTreeToggle<CR>
 
@@ -161,10 +173,12 @@ nmap <F8> :TagbarToggle<CR>
 
 " for command mode
 nnoremap <S-Tab> <<
+
 " for insert mode
 inoremap <S-Tab> <C-d>
 
-
+" map method search
+nmap <c-R> :CtrlPBufTag<cr>
 
 
 

@@ -11,14 +11,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'w0rp/ale'
-Plugin 'dracula/vim'
 Plugin 'trevordmiller/nova-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'tpope/vim-vinegar'
 
 " Editing
 Plugin 'tpope/vim-commentary'
