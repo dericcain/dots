@@ -19,7 +19,6 @@ syntax enable 			" enable syntax highlighting
 " Plugins stuff ====================================================================
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git|release\|build\'
-let g:ctrlp_buftag_types = { 'javascript': '--language-force=javascript --javascript-types=fcmv' }
 
 " emmet plugin stuff
 let g:user_emmet_leader_key='<Tab>'
@@ -56,7 +55,8 @@ set expandtab			" tabs are spaces
 set backspace=indent,eol,start " Make backspase work how we want it to work
 let mapleader = ',' " The default leader is \ but we want to use , instead
 
-
+" Nerdtree
+let NERDTreeHijackNetrw = 0
 
 
 
