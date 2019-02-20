@@ -1,3 +1,9 @@
+[user]
+	name = Deric Cain
+	email = deric.cain@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+
 # Nova colors
 [color]
   pager = true
